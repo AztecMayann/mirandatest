@@ -1,0 +1,1833 @@
+
+
+###Calculating Average file size
+
+total = 2048 + 4357 + 97658 + 125 + 8
+files = 5
+average = total / files
+print("The average size is " + str(average))
+
+
+
+
+
+
+
+
+
+
+
+###Listintg sum of square roots
+
+def square(n):
+    return n*n
+
+def sum_squares(x):
+    sum = 0
+    for n in range(1,x):
+        sum += square(n)
+    return sum
+
+print(sum_squares(10))
+
+
+OR
+
+
+def square(n):
+    return n*n
+
+def sum_squares(x):
+    sum = 0
+    for n in range(x):
+        sum += square(n)
+    return sum
+
+print(sum_squares(10)) # Should be 285
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+###restaurant share calculator
+bill = 47.28
+tip = bill * (15/100)
+total = bill + tip
+share = total/2
+print("Each person needs to pay: " + str(share))
+
+
+
+
+
+
+
+
+
+
+###Convert miles to Km
+
+def convert_distance(miles):
+	km = miles * 1.6 # approximately 1.6 km in 1 mile
+	return km
+my_trip_miles = convert_distance(55)
+
+# 2) Convert my_trip_miles to kilometers by calling the function above
+my_trip_km = my_trip_miles
+
+# 3) Fill in the blank to print the result of the conversion
+print("The distance in kilometers is " + str(my_trip_km))
+
+# 4) Calculate the round-trip in kilometers by doubling the result,
+# and fill in the blank to print the result
+print("The round-trip in kilometers is " + str(my_trip_miles* 2))
+
+
+
+
+
+
+
+
+
+### Color Translator to Hexvalue
+def color_translator(color):
+	if color == "red":
+		hex_color = "#ff0000"
+	elif color == "green":
+		hex_color = "#00ff00"
+	elif color == "blue":
+		hex_color = "#0000ff"
+	else:
+		hex_color = "unknown"
+	return hex_color
+
+print(color_translator("blue")) # Should be #0000ff
+print(color_translator("yellow")) # Should be unknown
+print(color_translator("red")) # Should be #ff0000
+print(color_translator("black")) # Should be unknown
+print(color_translator("green")) # Should be #00ff00
+print(color_translator("")) # Should be unknown
+
+
+
+
+
+
+
+
+
+
+### Name Organizer
+def format_name(first_name, last_name):
+	# code goes here
+  if first_name != '' and last_name !='':
+     return ("Name: " + last_name + ", " + first_name)
+  elif first_name != ' ' or last_name !=' ':
+     return ("Name: " + first_name + last_name)
+  else:
+     return ''
+
+
+print(format_name("Ernest", "Hemingway"))
+# Should return the string "Name: Hemingway, Ernest"
+
+print(format_name("", "Madonna"))
+# Should return the string "Name: Madonna"
+
+print(format_name("Voltaire", ""))
+# Should return the string "Name: Voltaire"
+
+print(format_name("", ""))
+# Should return an empty string
+
+
+
+
+
+
+
+
+
+
+### Choose the longets word (first in list if same)
+def longest_word(word1, word2, word3):
+	if len(word1) >= len(word2) and len(word1) >= len(word3):
+		word = word1
+	elif len(word2) >= len(word1) and len(word2) >= len(word3):
+		word = word2
+	else:
+		word = word3
+	return(word)
+
+print(longest_word("chair", "couch", "table"))
+print(longest_word("bed", "bath", "beyond"))
+print(longest_word("laptop", "notebook", "desktop"))
+
+
+
+
+
+
+
+
+
+###########################################
+
+
+Conditionals Cheat Sheet
+
+In earlier videos, we took a look at some of the built-in Python operators
+that allow us to compare values, and some logical operators we can use to
+combine values. We also learned how to use operators in if-else-elif blocks.
+
+It’s a lot to learn but, with practice, it gets easier to remember it all.
+In the meantime, this handy cheat sheet gives you all the information you
+need at a glance.
+
+Comparison operators
+
+    a == b: a is equal to b
+    a != b: a is different than b
+    a < b: a is smaller than b
+    a <= b: a is smaller or equal to b
+    a > b: a is bigger than b
+    a >= b: a is bigger or equal to b
+
+Logical operators
+
+    a and b: True if both a and b are True. False otherwise.
+    a or b: True if either a or b or both are True. False if both are False.
+    not a: True if a is False, False if a is True.
+
+
+
+
+
+#########################################################
+
+
+
+
+
+
+
+
+
+### dividing numerator % denominator
+def fractional_part(numerator, denominator):
+	# Operate with numerator and denominator to
+# keep just the fractional part of the quotient
+	if denominator >0:
+		  return (numerator%denominator)/denominator
+
+	return 0
+
+print(fractional_part(5, 5)) # Should be 0
+print(fractional_part(5, 4)) # Should be 0.25
+print(fractional_part(5, 3)) # Should be 0.66...
+print(fractional_part(5, 2)) # Should be 0.5
+print(fractional_part(5, 0)) # Should be 0
+print(fractional_part(0, 5)) # Should be 0
+
+
+
+
+
+
+
+
+
+
+
+
+###Print out numbers 1 through 7
+
+number = 1
+while number in range(1, 8):
+	print(number, end=" ")
+	number +=1
+
+
+
+
+
+
+
+
+
+
+
+
+###Print one line per letter
+def show_letters(word):
+	for letter in word:
+		print(letter)
+
+show_letters("Hello")
+# Should print one line per letter
+
+
+
+
+
+
+
+
+
+
+
+
+### Count Digits
+def digits(n):
+	return len(str(n))
+
+
+print(digits(25))   # Should print 2
+print(digits(144))  # Should print 3
+print(digits(1000)) # Should print 4
+print(digits(0))    # Should print 1
+
+
+
+
+
+
+
+
+
+
+
+#####Multiplication Table Print out
+
+def multiplication_table(start, stop):
+	for x in range(start,stop+1):
+		for y in range(start,stop+1):
+			print(str(x*y), end=" ")
+		print()
+
+multiplication_table(1, 3)
+# Should print the multiplication table shown above
+
+
+
+
+
+
+
+
+
+
+
+###counter function
+
+def counter(start, stop):
+	x = start
+	if start > stop:
+		return_string = "Counting down: "
+		while x >= stop:
+			return_string += str(x)
+			x-=1
+			if x >= stop:
+				return_string += ","
+			___
+	else:
+		return_string = "Counting up: "
+		while x <= stop:
+			return_string += str(x)
+			x+=1
+			if x <=stop:
+				return_string += ","
+			___
+	return return_string
+
+print(counter(1, 10)) # Should be "Counting up: 1,2,3,4,5,6,7,8,9,10"
+print(counter(2, 1)) # Should be "Counting down: 2,1"
+print(counter(5, 5)) # Should be "Counting up: 5"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### Print only even numbers
+
+def even_numbers(maximum):
+	return_string = ""
+	for x in range(2, maximum+1, 2):
+		return_string += str(x) + " "
+	return return_string.strip()
+
+print(even_numbers(6))  # Should be 2 4 6
+print(even_numbers(10)) # Should be 2 4 6 8 10
+print(even_numbers(1))  # No numbers displayed
+print(even_numbers(3))  # Should be 2
+print(even_numbers(0))  # No numbers displayed
+
+
+
+
+
+
+
+
+
+
+
+
+
+###Print Prime Factors
+
+def print_prime_factors(number):
+  # Start with two, which is the first prime
+  factor = 2
+  # Keep going until the factor is larger than the number
+  while factor <= number:
+    # Check if factor is a divisor of number
+    if number % factor == 0:
+      # If it is, print it and divide the original number
+      print(factor)
+      number = number / factor
+    else:
+      # If it's not, increment the factor by one
+      factor +=1
+  return "Done"
+
+print_prime_factors(100)
+# Should print 2,2,5,5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+###finding if number is power of 2( watching out for infinte loops)
+
+def is_power_of_two(n):
+  # Check if the number can be divided by two without a remainder
+  while n % 2 == 0 and n != 0:
+    n = n / 2
+  # If after dividing by two the number is 1, it's a power of two
+  if n == 1:
+    return True
+  return False
+
+
+print(is_power_of_two(0)) # Should be False
+print(is_power_of_two(1)) # Should be True
+print(is_power_of_two(8)) # Should be True
+print(is_power_of_two(9)) # Should be False
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#### Sum of all the divisors of a number
+
+def sum_divisors(n):
+  i = 1
+  sum = 0
+  # Return the sum of all divisors of n, not including n
+  while i<n:
+    if n% i==0:
+      sum +=i
+      i +=1
+    else:
+      i+=1
+
+  return sum
+
+print(sum_divisors(0))
+# 0
+print(sum_divisors(3)) # Should sum of 1
+# 1
+print(sum_divisors(36)) # Should sum of 1+2+3+4+6+9+12+18
+# 55
+print(sum_divisors(102)) # Should be sum of 2+3+6+17+34+51
+# 114
+
+
+
+
+
+
+
+
+
+
+############print the multiplication tables of a number
+
+def multiplication_table(number):
+	# Initialize the starting point of the multiplication table
+	multiplier = 1
+	# Only want to loop through 5
+	while multiplier <= 5:
+		result = multiplier * number
+		# What is the additional condition to exit out of the loop?
+		if result > 25 :
+			break
+		print(str(number) + "x" + str(multiplier) + "=" + str(result))
+		# Increment the variable for the loop
+		multiplier += 1
+
+multiplication_table(3)
+# Should print: 3x1=3 3x2=6 3x3=9 3x4=12 3x5=15
+
+multiplication_table(5)
+# Should print: 5x1=5 5x2=10 5x3=15 5x4=20 5x5=25
+
+multiplication_table(8)
+# Should print: 8x1=8 8x2=16 8x3=24
+
+
+
+
+
+
+
+##########Sum all the squares of a number
+
+def square(n):
+    return n*n
+
+def sum_squares(x):
+    sum = 0
+    for n in range(x):
+        sum += square(n)
+    return sum
+
+print(sum_squares(10)) # Should be 285
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+########## For Looooop  Printing Friend names
+
+friends = ["Fernando", "Pedro", "Juan", "Miguel"]
+for friend in friends:
+	print("Hi " + friend "!")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+########## iterate over a list of numbers to calculate the total sum and average
+
+values = [69, 78, 53, 69]
+sum = 0
+for value in values:
+	sum += value
+	length += 1
+
+print("Total sum: " + str(sum) " - Average: " + str(sum/lenth))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+################################################################
+
+##################################################################
+
+
+
+Not sure whether to use a for loop or a while loop?
+Remember that
+
+ A while loop is great for performing an action over and over until a condition has changed.
+
+ A for loop works well when you want to iterate over a sequence of elements.
+
+
+
+##################################################################
+
+#######################################################################
+
+
+
+
+
+More FOR loop examples
+
+
+
+
+
+
+###########
+
+product  = 1
+for n in range(1, 10):
+	product *= n
+
+print(product)
+
+
+
+
+
+
+
+
+##########FACTORIAL product of an integer and all subsequent integers
+
+def factorial(n):
+    result = 1
+    for i in range(n):
+        i +=1
+        result *=i
+    return result
+
+print(factorial(4)) # should return 24
+print(factorial(5)) # should return 120
+
+
+
+
+or
+
+
+def factorial(n):
+    result = 1
+    for x in range(1, n):
+        x += 1
+        result *= x
+    return result
+
+for n in range(0, 9):
+    print(n, factorial(n+1))
+
+
+
+
+###########################################################################
+###########################################################################
+
+THE RANGE() FUNCTION:
+
+
+
+It can recieve one, two , or three parameters
+
+range(1, 2, 3)
+
+If it recieves one parameter
+it will CREATE A SEQUENCE, one by one,
+from ZERO until ONE LESS than the parameter recieved
+
+If it recieves two parameters
+it will CREATE A SEQUENCE, one by one
+FROM the FIRST paramtetr
+until ONE LESS than the SECOND parameter
+
+If it recieves three parameters
+it will CREATE A SEQUENCE
+Starting from the FIRST number
+and moving towards the SECOND number
+but this time the JUMPS will be the size of the THIRD number
+
+
+##########################################################################
+##########################################################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+########## Temperature Converter, F to Calculate
+
+def con_celsius(x):
+	return (x-32)*5/9
+
+for x in range(0, 101, 10)
+	print(x, con_celsius(x))
+
+
+
+
+
+
+
+
+++++++NESTED LOOPS++++++++++++
+
+also: attention to new parameter
+
+
+
+
+
+
+
+########## Prints each tile in a set
+
+Domino loop -----------
+
+
+for left in range(7):
+	for right in range(left, 7):
+		## in the print function you see the end parameter
+		print("[" + str(left) + "|" + str(right) + "]", end=" ")
+	print()
+
+
+OUTPUT:
+
+[0|0] [0|1] [0|2] [0|3] [0|4] [0|5] [0|6]
+[1|1] [1|2] [1|3] [1|4] [1|5] [1|6]
+[2|2] [2|3] [2|4] [2|5] [2|6]
+[3|3] [3|4] [3|5] [3|6]
+[4|4] [4|5] [4|6]
+[5|5] [5|6]
+[6|6]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+########## Team VS Loop
+
+
+teams= [ 'Cabrones', 'Mamados', 'Los Tequerisi', 'Chivas', 'Cholos', 'America']
+for home_team in teams:
+	for away_team in teams:
+		if home_team != away_team:
+			print(home_team + " VS " + away_team)
+
+
+
+
+
+
+
+
+
+
+
+
+
+######### Greet Friend Loop
+
+def greet_freinds(friend):
+	for friend in friends:
+		print("Hi " + friend)
+
+
+
+
+
+
+
+
+
+###################################
+#################################
+
+
+
+recursive function
+
+
+def factorial(n):
+	if n < 2:
+		return 1
+	return n * factorial(n-1)
+	print( "Returning " + str(result) + " for factorial of " + str(n))
+	return result
+
+
+
+
+
+###############################################
+#############################################
+
+STRINGGGGSSSS
+
+LALALALALALA
+
+message = "Fernando"
+
+print(("L" + message[4]) x 5 )
+
+##########################################
+#############################################
+
+
+
+
+message = " A kong string with a silly typo"
+
+
+###### RETURNS A TYPE ERROR  ( STRINGS ARE IMMUTABLE )
+message[2] = "l"
+
+
+###### SO SOLUTION
+
+new_message =  message[:2] + "l" + message[3:]
+print(new_message)
+
+
+
+
+###############################################
+#############################################
+
+*****NEW METHOD ( Function applies to a variable):      .index
+
+#############################################
+###############################################
+
+
+pets = "Cats & Dogs"
+
+pets.index("&")
+5
+
+pets.index("C")
+0
+
+pets.index("Dog")
+7
+
+#returns just the first position that matches
+pets.index("s")
+3
+
+
+###############################################
+#############################################
+
+Know if if a substring is present
+
+using the keyword  " in "
+
+
+"Dragons" in pets
+
+returns FALSE
+
+"Cats" in pets
+
+returns TRUE , as it is found in our original variable pets = "Cats & Dogs"
+
+
+
+here, " in " is used as a conditional that will return either TRUE or FALSE
+
+#############################################
+###############################################
+
+ Imagine that your company has recently moved to using a new domain,
+ but a lot of the company email addresses are still using the old one.
+ You want to write a program that replaces this old domain with the
+ new one in any outdated email addresses. The function to replace
+ the domain would look like this.
+
+
+
+ def replace_domain(email, old_domain, new_domain):
+	if "@" + old_domain in email:
+			index = email.index("@" + old_domain)
+			new_email = email [:index] + "@" + new_domain
+			return new_email
+	return email
+
+
+
+
+
+
+###############################################
+#############################################
+
+Prints the position of the given substring using the .index method
+
+#############################################
+###############################################
+
+word = "supercalifragilisticexpialidocious"
+new_word = word.index("x")
+
+print(new_word)
+
+
+
+
+###############################################
+#############################################
+###############################################
+#############################################
+
+
+STRING METHODS FOR TRANSFORMING
+
+So far, we've seen ways you can access portions of strings using
+the indexing technique, create new strings by slicing and
+concatenating, find characters and strings using the index method,
+and even test if one string contains another. On top of all this
+string processing power, the string class provides a bunch of
+other methods for working with text.
+
+
+#############################################
+###############################################
+#############################################
+###############################################
+
+
+Some string methods let you perform
+transformations or formatting on the
+string text, like upper, and its opposite,
+lower
+
+##############################################################################################
+"Mountains" .upper()
+'MOUNTAINS'
+##############################################################################################
+"Mountains" .lower()
+'mountains'
+
+
+ex.
+
+answer = 'YES'
+if answer.lower() == "yes":
+	print ("User said yes")
+
+
+
+returns User said yes
+
+
+
+##############################################################################################
+
+another useful method strip
+
+" yes ".strip()
+'yes'
+
+" yes ".lstrip()
+'yes '
+
+" yes ".rstrip()
+' yes'
+
+
+
+##############################################################################################
+
+The method endswith returns whether the string ends with a certain substring.
+
+
+"The number of times e occurs in this string is not 3 it is 4".count("e")
+
+returns  4
+
+
+
+#############################################
+###############################################
+
+
+MANY OTHERS
+
+.endswith
+.isnumeric
+.split
+
+list too long
+#############################################
+###############################################
+###############################################
+#############################################
+String Reference Cheat Sheet
+String Reference Cheat Sheet
+In Python, there are a lot of things you can do with strings. In this cheat sheet, you’ll find the most common string operations and string methods.
+
+String operations
+len(string) Returns the length of the string
+for character in string Iterates over each character in the string
+if substring in string Checks whether the substring is part of the string
+string[i] Accesses the character at index i of the string, starting at zero
+string[i:j] Accesses the substring starting at index i, ending at index j-1. If i is omitted, it's 0 by default. If j is omitted, it's len(string) by default.
+String methods
+string.lower() / string.upper() Returns a copy of the string with all lower / upper case characters
+string.lstrip() / string.rstrip() / string.strip() Returns a copy of the string without left / right / left or right whitespace
+string.count(substring) Returns the number of times substring is present in the string
+string.isnumeric() Returns True if there are only numeric characters in the string. If not, returns False.
+string.isalpha() Returns True if there are only alphabetic characters in the string. If not, returns False.
+string.split() / string.split(delimiter) Returns a list of substrings that were separated by whitespace / delimiter
+string.replace(old, new) Returns a new string where all occurrences of old have been replaced by new.
+delimiter.join(list of strings) Returns a new string with all the strings joined by the delimiter
+
+
+
+#############################################
+###############################################
+###############################################
+#############################################
+
+
+Formatting Strings Cheat Sheet
+Python offers different ways to format strings. In the video, we explained the format() method. In this reading,
+we'll highlight three different ways of formatting strings. For this course you only need to know the format() method.
+But on the internet, you might find any of the three, so it's a good idea to know that the others exist.
+
+Using the format() method
+The format method returns a copy of the string where the {} placeholders have been
+replaced with the values of the variables. These variables are converted to strings
+if they weren't strings already. Empty placeholders are replaced by the variables
+passed to format in the same order.
+
+
+
+##############################################################################################
+
+# "base string with {} placeholders".format(variables)
+
+example = "format() method"
+
+formatted_string = "this is an example of using the {} on a string".format(example)
+
+print(formatted_string)
+
+"""Outputs:
+this is an example of using the format() method on a string
+"""
+
+##############################################################################################
+
+If the placeholders indicate a number, they’re replaced by the variable corresponding to that order (starting at zero).
+
+# "{0} {1}".format(first, second)
+
+first = "apple"
+second = "banana"
+third = "carrot"
+
+formatted_string = "{0} {2} {1}".format(first, second, third)
+
+print(formatted_string)
+
+"""Outputs:
+apple carrot banana
+"""
+
+
+###############################################
+#############################################
+###############################################
+#############################################
+
+
+
+def get_word(sentence, n):
+	# Only proceed if n is positive
+	if n > 0:
+		words = sentence.split()
+		# Only proceed if n is not more than the number of words
+		if n <= len(words):
+			return words[n-1]
+	return("")
+
+print(get_word("This is a lesson about lists", 4)) # Should print: lesson
+print(get_word("This is a lesson about lists", -4)) # Nothing
+print(get_word("Now we are cooking!", 1)) # Should print: Now
+print(get_word("Now we are cooking!", 5)) # Nothing
+
+
+
+###############################################
+#############################################
+
+
+Lists Defined
+
+
+Lists in Python are defined using square brackets, with the elements stored in the list
+separated by commas: list = ["This", "is", "a", "list"]. You can use the len() function
+to return the number of elements in a list: len(list) would return 4. You can also use
+the in keyword to check if a list contains a certain element. If the element is present,
+it will return a True boolean. If the element is not found in the list, it will return
+False. For example, "This" in list would return True in our example. Similar to strings,
+lists can also use indexing to access specific elements in a list based on their position.
+You can access the first element in a list by doing list[0], which would allow you to access
+the string "This".
+
+In Python, lists and strings are quite similar. They’re both examples of sequences of data.
+Sequences have similar properties, like (1) being able to iterate over them using for loops;
+(2) support indexing; (3) using the len function to find the length of the sequence; (4)
+using the plus operator + in order to concatenate; and (5) using the in keyword to check
+if the sequence contains a value. Understanding these concepts allows you to apply them to
+other sequence types as well.
+
+###############################################
+#############################################
+###############################################
+#############################################
+
+
+Modifying Lists
+While lists and strings are both sequences, a big difference between them is that lists are mutable.
+This means that the contents of the list can be changed, unlike strings, which are immutable. You can
+add, remove, or modify elements in a list.
+
+You can add elements to the end of a list using the append method. You call this method on a list using
+dot notation, and pass in the element to be added as a parameter. For example, list.append("New data")
+would add the string "New data" to the end of the list called list.
+
+If you want to add an element to a list in a specific position, you can use the method insert. The
+method takes two parameters: the first specifies the index in the list, and the second is the element
+to be added to the list. So list.insert(0, "New data") would add the string "New data" to the front of
+the list. This wouldn't overwrite the existing element at the start of the list. It would just shift
+all the other elements by one. If you specify an index that’s larger than the length of the list, the
+element will simply be added to the end of the list.
+
+You can remove elements from the list using the remove method. This method takes an element as a
+parameter, and removes the first occurrence of the element. If the element isn’t found in the list,
+you’ll get a ValueError error explaining that the element was not found in the list.
+
+You can also remove elements from a list using the pop method. This method differs from the remove
+method in that it takes an index as a parameter, and returns the element that was removed. This can
+be useful if you don't know what the value is, but you know where it’s located. This can also be
+useful when you need to access the data and also want to remove it from the list.
+
+Finally, you can change an element in a list by using indexing to overwrite the value stored at the
+specified index. For example, you can enter list[0] = "Old data" to overwrite the first element in
+a list with the new string "Old data".
+
+
+###############################################
+#############################################
+
+
+return the {n}th word from a passed sentence. For example, get_word
+("This is a lesson about lists", 4) should return "lesson", which
+is the 4th word in this sentence. Hint: remember that list indexes
+start at 0, not 1.
+
+
+
+def get_word(sentence, n):
+	# Only proceed if n is positive
+	if n > 0:
+		words = sentence.split()
+		# Only proceed if n is not more than the number of words
+		if n <= len(words):
+			return words[n-1]
+	return("")
+
+print(get_word("This is a lesson about lists", 4)) # Should print: lesson
+print(get_word("This is a lesson about lists", -4)) # Nothing
+print(get_word("Now we are cooking!", 1)) # Should print: Now
+print(get_word("Now we are cooking!", 5)) # Nothing
+
+
+
+
+
+###############################################
+#############################################
+###############################################
+#############################################
+
+
+
+
+Return a list containing everyother element in the list using a for loop
+
+
+
+
+def skip_elements(elements):
+	# Initialize variables
+	new_list = []
+	i = 0
+
+	# Iterate through the list
+	for i in range(len(elements)):
+		# Does this element belong in the resulting list?
+		if i%2 == 0:
+			# Add this element to the resulting list
+			new_list.append(elements[i])
+
+
+
+	return new_list
+
+print(skip_elements(["a", "b", "c", "d", "e", "f", "g"])) # Should be ['a', 'c', 'e', 'g']
+print(skip_elements(['Orange', 'Pineapple', 'Strawberry', 'Kiwi', 'Peach'])) # Should be ['Orange', 'Strawberry', 'Peach']
+print(skip_elements([])) # Should be []
+
+
+
+
+or
+
+
+
+
+def skip_elements(elements):
+	# Initialize variables
+	new_list = []
+	i = 0
+
+	# Iterate through the list
+	for i, word in enumerate(elements):
+		# Does this element belong in the resulting list?
+		if i%2 == 0:
+			# Add this element to the resulting list
+			new_list.append(word)
+
+
+
+	return new_list
+
+print(skip_elements(["a", "b", "c", "d", "e", "f", "g"])) # Should be ['a', 'c', 'e', 'g']
+print(skip_elements(['Orange', 'Pineapple', 'Strawberry', 'Kiwi', 'Peach'])) # Should be ['Orange', 'Strawberry', 'Peach']
+print(skip_elements([])) # Should be []
+
+
+
+
+
+
+###############################################
+#############################################
+###############################################
+#############################################
+
+
+USING TUPLES TO STORE INFO ABOUT A FILE
+
+def file_size(file_info):
+	name, type, file_size= file_info
+	return("{:.2f}".format(file_size / 1024))
+
+print(file_size(('Class Assignment', 'docx', 17875))) # Should print 17.46
+print(file_size(('Notes', 'txt', 496))) # Should print 0.48
+print(file_size(('Program', 'py', 1239))) # Should print 1.21
+
+
+
+###############################################
+#############################################
+
+
+
+
+LIST COMPREHENSIONS
+
+
+
+###############################################
+#############################################
+
+
+
+
+create a list with multiples of 7 from 7 to 70
+
+
+
+multiples = []
+for x in range(1, 11):
+	multiples.append(x*7)
+
+print(multiples)
+
+
+
+
+With python provided list comprehension we can re write this to just take 2 lines
+
+
+
+multiples = [ x * 7 for x in range(1, 11)]
+print(multiples)
+
+
+
+
+LIST comprehensions let us create new lists based on sequences or ranges
+
+###############################################
+#############################################
+
+
+
+So as in the example above when we want to create a list based on  range or based
+on the contents of a list a tuple a string or any other python sequence.
+
+
+
+
+
+Say we have a list of strings with the names of programming
+languages like this one, and we want to generate a list
+of the length of the strings.
+
+We could iterate over the list and add them using append like we did before
+
+or we could use list comprehension like this
+
+
+
+
+languages = ["Python", "Perl", "Ruby", "Go", "Java", "C"]
+lengths = [len(language) for language in languages]
+
+print(lengths)
+
+
+
+
+
+
+#############################################
+###############################################
+###############################################
+############################################
+
+
+Say we wanted all the numbers that
+are divisible by 3 between 0 and a 100,
+we could create a list like this
+
+
+z = [x for x in range (0, 101) if x % 3 == 0]
+print(z)
+
+In this case we just want the element x
+to be a part of the list, but we only
+want the numbers where the remainder
+of the division by 3 is 0. So we add
+the conditional clause after the rang
+
+
+#############################################
+###############################################
+###############################################
+#############################################
+
+
+returns a list of odd numbers between 1 and n
+
+def odd_numbers(n):
+	return [x for x in range(0, n+1) if x % 2 != 0]
+
+	#we have to add 1 to n to get to 5 since it wont display the last number
+
+print(odd_numbers(5))  # Should print [1, 3, 5]
+print(odd_numbers(10)) # Should print [1, 3, 5, 7, 9]
+print(odd_numbers(11)) # Should print [1, 3, 5, 7, 9, 11]
+print(odd_numbers(1))  # Should print [1]
+print(odd_numbers(-1)) # Should print []
+
+
+
+#############################################
+###############################################
+###############################################
+#############################################
+
+
+
+
+Lists and Tuples Operations Cheat Sheet
+Lists and tuples are both sequences, so they share a number of sequence operations.
+But, because lists are mutable, there are also a number of methods specific just to
+lists. This cheat sheet gives you a run down of the common operations first, and the
+list-specific operations second.
+
+Common sequence operations
+len(sequence) Returns the length of the sequence
+for element in sequence Iterates over each element in the sequence
+if element in sequence Checks whether the element is part of the sequence
+sequence[i] Accesses the element at index i of the sequence, starting at zero
+sequence[i:j] Accesses a slice starting at index i, ending at index j-1. If i is
+omitted, it's 0 by default. If j is omitted, it's len(sequence) by default.
+for index, element in enumerate(sequence) Iterates over both the indexes
+and the elements in the sequence at the same time
+
+ Check out the official documentation for sequence operations.
+ https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range
+
+List-specific operations and methods
+list[i] = x Replaces the element at index i with x
+list.append(x) Inserts x at the end of the list
+list.insert(i, x) Inserts x at index i
+list.pop(i) Returns the element a index i, also removing it from the list. If i is
+omitted, the last element is returned and removed.
+list.remove(x) Removes the first occurrence of x in the list
+list.sort() Sorts the items in the list
+list.reverse() Reverses the order of items of the list
+list.clear() Removes all the items of the list
+list.copy() Creates a copy of the list
+list.extend(other_list) Appends all the elements of other_list at the end of list
+ Most of these methods come from the fact that lists are mutable sequences. For more info,
+ see the official documentation for mutable sequences and the list specific documentation.
+
+List comprehension
+[expression for variable in sequence] Creates a new list based on the given sequence. Each
+element is the result of the given expression.
+[expression for variable in sequence if condition] Creates a new list based on the given
+sequence. Each element is the result of the given expression; elements only get added if
+the condition is true.
+
+
+
+#############################################
+###############################################
+###############################################
+############################################
+
+Rename all the files with extension hpp to the extension h
+
+
+filenames = ["program.c", "stdio.hpp", "sample.hpp", "a.out", "math.hpp", "hpp.out"]
+# Generate newfilenames as a list containing the new filenames
+# using as many lines of code as your chosen method requires.
+newfilenames = [i.replace('.hpp','.h') for i in filenames]
+
+
+print(newfilenames)
+# Should be ["program.c", "stdio.h", "sample.h", "a.out", "math.h", "hpp.out"]
+
+
+
+
+
+
+
+#############################################
+###############################################
+###############################################
+############################################
+
+
+Create a function that turns text into pig latin:
+a simple text transformation that modifies each word
+moving the first character to the end and appending "ay"
+to the end. For example, python ends up as ythonpay.
+
+
+def pig_latin(text):
+  say = ""
+  # Separate the text into words
+  new= []
+  words = text.split()
+  for word in words:
+    # Create the pig latin word and add it to the list
+    new.append(word[1:] + word[0] + "ay")
+    # Turn the list back into a phrase
+    phrase = " ".join(new)
+  return phrase
+
+print(pig_latin("hello how are you")) # Should be "ellohay owhay reaay ouyay"
+print(pig_latin("programming in python is fun")) # Should be "rogrammingpay niay ythonpay siay unfay"
+
+
+#############################################
+###############################################
+###############################################
+############################################
+
+The permissions of a file in a Linux system are split into three sets of
+three permissions: read, write, and execute for the owner, group, and others.
+Each of the three values can be expressed as an octal number summing each
+permission, with 4 corresponding to read, 2 to write, and 1 to execute. Or
+it can be written with a string using the letters r, w, and x or - when the
+permission is not granted.
+
+For example:
+640 is read/write for the owner, read for the group, and no permissions for the others; converted to a string, it would be: "rw-r-----"
+755 is read/write/execute for the owner, and read/execute for group and others; converted to a string, it would be: "rwxr-xr-x"
+Fill in the blanks to make the code convert a permission in octal format into a string format.
+
+
+def octal_to_string(octal):
+    result = ""
+    value_letters = [(4,"r"),(2,"w"),(1,"x")]
+    # Iterate over each of the digits in octal
+    for i in [int(n) for n in str(octal)]:
+        # Check for each of the permissions values
+        for value, letter in value_letters:
+            if i >= value:
+                result += letter
+                i -= value
+            else:
+                result += "-"
+    return result
+
+print(octal_to_string(755)) # Should be rwxr-xr-x
+print(octal_to_string(644)) # Should be rw-r--r--
+print(octal_to_string(750)) # Should be rwxr-x---
+print(octal_to_string(600)) # Should be rw-------
+
+#############################################
+###############################################
+###############################################
+############################################
+
+
+The group_list function accepts a group name and a list of members,
+and returns a string with the format: group_name: member1, member2,
+… For example, group_list("g", ["a","b","c"]) returns "g: a, b, c".
+Fill in the gaps in this function to do that.
+
+
+def group_list(group, users):
+  members = group + ": " + ", ".join(users)
+  return members
+
+print(group_list("Marketing", ["Mike", "Karen", "Jake", "Tasha"])) # Should be "Marketing: Mike, Karen, Jake, Tasha"
+print(group_list("Engineering", ["Kim", "Jay", "Tom"])) # Should be "Engineering: Kim, Jay, Tom"
+print(group_list("Users", "")) # Should be "Users:"
+
+
+#############################################
+###############################################
+###############################################
+############################################
+
+The guest_list function reads in a list of tuples with the name, age, and profession of each party guest,
+and prints the sentence "Guest is X years old and works as __." for each one. For example,
+guest_list(('Ken', 30, "Chef"), ("Pat", 35, 'Lawyer'), ('Amanda', 25, "Engineer"))
+should print out:
+
+Ken is 30 years old and works as Chef.
+Pat is 35 years old and works as Lawyer.
+Amanda is 25 years old and works as Engineer.
+
+Fill in the gaps in this function to do that.
+
+def guest_list(guests):
+	for name, age, profession in guests:
+
+		print("{} is {} years old and works as {}".format(name, age, profession))
+
+
+guest_list([('Ken', 30, "Chef"), ("Pat", 35, 'Lawyer'), ('Amanda', 25, "Engineer")])
+
+#Click Run to submit code
+"""
+Output should match:
+Ken is 30 years old and works as Chef
+Pat is 35 years old and works as Lawyer
+Amanda is 25 years old and works as Engineer
+"""
+
+
+
+#############################################
+###############################################
+###############################################
+############################################
+
+
+DICTIONARIES!:::::::::::::::::::::::::::
+
+file_counts = {"jpg":10, "txt":14, "csv":2, "py":23}
+print(file_counts)
+
+
+file_counts["txt"]
+14
+
+"jpg" in file_counts
+TRUE
+
+"html" in file_counts
+FALSE
+
+
+
+file_counts["cfg"] = 8
+print(file_counts)
+
+
+file_counts["csv"] = 17
+print(file_counts)
+
+
+del file_counts["cfg"]
+print(file_counts)
+
+#############################################
+###############################################
+###############################################
+############################################
+
+The "toc" dictionary represents the table of contents for a book.
+Fill in the blanks to do the following:
+
+1) Add an entry for Epilogue on page 39.
+2) Change the page number for Chapter 3 to 24.
+3) Display the new dictionary contents.
+4) Display True if there is Chapter 5, False if there isn't.
+
+toc = {"Introduction":1, "Chapter 1":4, "Chapter 2":11, "Chapter 3":25, "Chapter 4":30}
+toc["Epilogue"] = 39 # Epilogue starts on page 39
+toc["Chapter 3"] = 24 # Chapter 3 now starts on page 24
+print(toc) # What are the current contents of the dictionary?
+print("Chapter 5" in toc) # Is there a Chapter 5?
+
+
+#############################################
+###############################################
+###############################################
+############################################
+
+Dictionaries Defined
+Dictionaries are another data structure in Python. They’re similar to a list in that they can be
+used to organize data into collections. However, data in a dictionary isn't accessed based on
+its position. Data in a dictionary is organized into pairs of keys and values. You use the key
+to access the corresponding value. Where a list index is always a number, a dictionary key can
+be a different data type, like a string, integer, float, or even tuples.
+
+When creating a dictionary, you use curly brackets: {}. When storing values in a dictionary, the
+key is specified first, followed by the corresponding value, separated by a colon. For example,
+animals = { "bears":10, "lions":1, "tigers":2 } creates a dictionary with three key value pairs,
+stored in the variable animals. The key "bears" points to the integer value 10, while the key
+"lions" points to the integer value 1, and "tigers" points to the integer 2. You can access the
+values by referencing the key, like this: animals["bears"]. This would return the integer 10,
+since that’s the corresponding value for this key.
+
+You can also check if a key is contained in a dictionary using the in keyword. Just like other
+uses of this keyword, it will return True if the key is found in the dictionary; otherwise it
+will return False.
+
+Dictionaries are mutable, meaning they can be modified by adding, removing, and replacing elements
+in a dictionary, similar to lists. You can add a new key value pair to a dictionary by assigning a
+value to the key, like this: animals["zebras"] = 2. This creates the new key in the animal
+dictionary called zebras, and stores the value 2. You can modify the value of an existing key by
+doing the same thing. So animals["bears"] = 11 would change the value stored in the bears key from
+10 to 11. Lastly, you can remove elements from a dictionary by using the del keyword. By doing del
+animals["lions"] you would remove the key value pair from the animals dictionary.
+
+
+
+#############################################
+###############################################
+###############################################
+############################################
+
+
+
+file_counts = {"jpg": 10, "txt": 14, "csv": 2, "py": 23}
+for extension in file_counts:
+	print(extension)
+
+...
+...
+jpg
+txt
+csv
+py
+
+for ext, amount in file_counts.items():
+	print("There are {} files with the .{} extension".format(amount, ext))
+
+
+
+
+
+#############################################
+###############################################
+###############################################
+############################################
+
+
+file_counts.keys()
+
+
+
+
+#############################################
+###############################################
+###############################################
+############################################
+
+
+cool_beasts = {"octopuses":"tentacles", "dolphins":"fins", "rhinos":"horns"}
+for beast, parts in cool_beasts.items():
+    print("{} have {}".format(beast, parts))
+
+
+#############################################
+###############################################
+###############################################
+############################################
+
+
+	wardrobe = {"shirt":["red","blue","white"], "jeans":["blue","black"]}
+for article, color in wardrobe.items():
+    for colorlay in color:
+		    print("{} {}".format(colorlay, article))
+
+
+
+#############################################
+###############################################
+###############################################
+#########################################################################################
+###############################################
+###############################################
+############################################
+
+
+Dictionary Methods Cheat Sheet
+Dictionary Methods Cheat Sheet
+Definition
+
+x = {key1:value1, key2:value2}
+
+Operations
+
+len(dictionary) - Returns the number of items in the dictionary
+
+for key in dictionary - Iterates over each key in the dictionary
+
+for key, value in dictionary.items() - Iterates over each key,value pair in the dictionary
+
+if key in dictionary - Checks whether the key is in the dictionary
+
+dictionary[key] - Accesses the item with key key of the dictionary
+
+dictionary[key] = value - Sets the value associated with key
+
+del dictionary[key] - Removes the item with key key from the dictionary
+
+#########################################################################################
+
+Methods
+
+dict.get(key, default) - Returns the element corresponding to key, or default if it's not present
+dict.keys() - Returns a sequence containing the keys in the dictionary
+dict.values() - Returns a sequence containing the values in the dictionary
+dict.update(other_dictionary) - Updates the dictionary with the items coming from the other dictionary. Existing entries will be replaced; new entries will be added.
+dict.clear() - Removes all the items of the dictionary
+Check out the official documentation for dictionary operations and methods.
+
+
+#############################################
+###############################################
+###############################################
+#########################################################################################
+###############################################
+###############################################
+############################################
+
+a = dict(one=1, two=2, three=3)
+b = {'one': 1, 'two': 2, 'three': 3}
+c = dict(zip(['one', 'two', 'three'], [1, 2, 3]))
+d = dict([('two', 2), ('one', 1), ('three', 3)])
+e = dict({'three': 3, 'one': 1, 'two': 2})
+f = dict({'one': 1, 'three': 3}, two=2)
+a == b == c == d == e == f
+True
+
+#############################################
+###############################################
+###############################################
+#########################################################################################
+###############################################
+###############################################
+############################################
