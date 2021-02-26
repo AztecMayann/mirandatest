@@ -1828,6 +1828,496 @@ True
 ###############################################
 ###############################################
 #########################################################################################
+MODULE 4 ASSESMENT ON Strings
+
+The format_address function separates out parts of the address string
+into new strings: house_number and street_name,
+and returns: "house number X on street named Y".
+
+The format of the input string is: numeric house number,
+followed by the street name which may contain numbers,
+but never by themselves, and could be several words long.
+
+For example, "123 Main Street", "1001 1st Ave", or "55 North Center Drive". Fill in the gaps to complete this function.
+
+
+
+def format_address(address_string):
+# Declare variables
+    address= ""
+    number = ""
+# Separate the address string into parts
+  addy = address_string.split()
+# Traverse through the address parts
+    for i in addy:
+
+  # Determine if the address part is the
+  # house number or part of the street name
+    if i.isdigit():
+
+      number= i
+
+    else:
+
+      address+= i
+      address+= ' '
+
+# Does anything else need to be done
+# before returning the result?
+
+# Return the formatted string
+  return "house number {} on street named {}".format(number, address)
+
+print(format_address("123 Main Street"))
+# Should print: "house number 123 on street named Main Street"
+
+print(format_address("1001 1st Ave"))
+# Should print: "house number 1001 on street named 1st Ave"
+
+print(format_address("55 North Center Drive"))
+# Should print "house number 55 on street named North Center Drive"
+
+############################################
+###############################################
+###############################################
+############################################
+
+The highlight_word function changes the given word in a sentence
+to its upper-case version.
+
+For example,
+
+highlight_word("Have a nice day", "nice") returns "Have a NICE day".
+
+Can you write this function in just one line?
+
+
+###############################################
+
+
+
+def highlight_word(sentence, word):
+	return(sentence.replace(word, word.upper()))
+
+print(highlight_word("Have a nice day", "nice"))
+print(highlight_word("Shhh, don't be so loud!", "loud"))
+print(highlight_word("Automating with Python is fun", "fun"))
+
+
+
+############################################
+###############################################
+###############################################
+############################################
+
+A professor with two assistants, Jamie and Drew,
+wants an attendance list of the students,
+in the order that they arrived in the classroom.
+
+Drew was the first one to note which students arrived,
+and then Jamie took over. After the class, they each
+entered their lists into the computer and emailed
+them to the professor, who needs to combine them
+into one, in the order of each student's arrival.
+Jamie emailed a follow-up, saying that her list is
+in reverse order.
+
+Complete the steps to
+combine them into one list as follows:
+
+the contents of Drew's list, followed by Jamie's list in reverse order,
+to get an accurate list of the students as they arrived.
+
+###############################################
+
+def combine_lists(list1, list2):
+  # Generate a new list containing the elements of list2
+  # Followed by the elements of list1 in reverse order
+  new_list = list2
+
+  for names in reversed(range(len(list1))):
+    new_list.append(list1[names])
+
+  return new_list
+
+Jamies_list = ["Alice", "Cindy", "Bobby", "Jan", "Peter"]
+Drews_list = ["Mike", "Carol", "Greg", "Marcia"]
+
+print(combine_lists(Jamies_list, Drews_list))
+
+
+############################################
+###############################################
+###############################################
+############################################
+
+
+Use a list comprehension to create a list of squared numbers (n*n).
+The function receives the variables start and end, and returns a list
+of squares of consecutive numbers between start and end inclusively.
+
+For example, squares(2, 3) should return [4, 9].
+
+
+
+###############################################
+
+
+def squares(start, end):
+	return [ (i * i) for i in range(start, end+1) ]
+
+print(squares(2, 3)) # Should be [4, 9]
+print(squares(1, 5)) # Should be [1, 4, 9, 16, 25]
+print(squares(0, 10)) # Should be [0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+
+
+############################################
+###############################################
+###############################################
+############################################
+
+
+
+Complete the code to iterate through the keys and values of
+the car_prices dictionary, printing out some information about each one.
+
+
+
+###############################################
+
+
+def car_listing(car_prices):
+  result = ""
+  for car, price in car_prices.items():
+    result += "{} costs {} dollars".format(car, car_prices[car]) + "\n"
+  return result
+
+print(car_listing({"Kia Soul":19000, "Lamborghini Diablo":55000, "Ford Fiesta":13000, "Toyota Prius":24000}))
+
+
+############################################
+###############################################
+###############################################
+############################################
+Question 6
+
+Taylor and Rory are hosting a party.
+They sent out invitations, and each one collected responses into dictionaries,
+with names of their friends and how many guests each friend is bringing.
+
+Each dictionary is a partial list, but Rory's list has more current
+information about the number of guests.
+
+Combine both dictionaries into one, with each friend listed only
+once, and the number of guests from Rory's dictionary taking precedence,
+if a name is included in both dictionaries. Then print the resulting
+dictionary.
+
+
+###############################################
+
+def combine_guests(guests1, guests2):
+  # Combine both dictionaries into one, with each key listed
+  # only once, and the value from guests1 taking precedence
+  guests2.update(guests1)
+
+  return guests2
+
+Rorys_guests = { "Adam":2, "Brenda":3, "David":1, "Jose":3, "Charlotte":2, "Terry":1, "Robert":4}
+Taylors_guests = { "David":4, "Nancy":1, "Robert":2, "Adam":1, "Samantha":3, "Chris":5}
+
+print(combine_guests(Rorys_guests, Taylors_guests))
+
+
+############################################
+###############################################
+###############################################
+############################################
+
+Question 7
+Use a dictionary to count the frequency of letters in the input string.
+Only letters should be counted, not blank spaces, numbers, or punctuation.
+Upper case should be considered the same as lower case.
+
+For example,
+
+count_letters("This is a sentence.")
+
+should return {'t': 2, 'h': 1, 'i': 2, 's': 3, 'a': 1, 'e': 3, 'n': 2, 'c': 1}.
+
+
+
+###############################################
+
+
+
+def count_letters(text):
+  result = {}
+  text = text.lower()
+  # Go through each letter in the text
+  for letter in text.lower():
+    # Check if the letter needs to be counted or not
+    if letter.isalpha() and letter not in result:
+      result[letter] = text.lower().count(letter)
+    # Add or increment the value in the dictionary
+
+  return result
+
+print(count_letters("AaBbCc"))
+# Should be {'a': 2, 'b': 2, 'c': 2}
+
+print(count_letters("Math is fun! 2+2=4"))
+# Should be {'m': 1, 'a': 1, 't': 1, 'h': 1, 'i': 1, 's': 1, 'f': 1, 'u': 1, 'n': 1}
+
+print(count_letters("This is a sentence."))
+# Should be {'t': 2, 'h': 1, 'i': 2, 's': 3, 'a': 1, 'e': 3, 'n': 2, 'c': 1}
+
+
+############################################
+###############################################
+###############################################
+############################################
+
+Object Inheritance
+In object-oriented programming, the concept of inheritance allows you to build
+relationships between objects, grouping together similar concepts and reducing
+code duplication. Let's create a custom Fruit class with color and flavor attributes:
+
+
+class Fruit:
+  def __init__(self, color, flavor):
+    self.color = color
+    self.flavor = flavor
+
+We defined a Fruit class with a constructor
+for color and flavor attributes.
+
+###############################################
+
+Next, we'll define an Apple class along with a new
+Grape class, both of which we want to inherit
+properties and behaviors from the Fruit class:
+
+
+class Apple(Fruit):
+  pass
+
+class Grape(Fruit):
+  pass
+
+In Python, we use parentheses in the class declaration to have
+the class inherit from the Fruit class. So in this example, we’re
+instructing our computer that both the Apple class and
+Grape class inherit from the Fruit class.
+
+###############################################
+
+This means that they both have the same constructor
+method which sets the color and flavor attributes.
+
+We can now create instances of our Apple and Grape classes:
+
+
+granny_smith = Apple("green", "tart")
+carnelian = Grape("purple", "sweet")
+
+
+
+print(granny_smith.flavor)
+tart
+print(carnelian.color)
+purple
+
+
+Inheritance allows us to define attributes or methods
+that are shared by all types of fruit without having
+to define them in each fruit class individually.
+
+###############################################
+
+We can then also define specific attributes or methods
+that are only relevant for a specific type of fruit.
+
+Let's look at another example, this time with animals:
+
+class Animal:
+  sound = ""
+  def __init__(self, name):
+    self.name = name
+  def speak(self):
+    print("{sound} I'm {name}! {sound}".format(
+      name=self.name, sound=self.sound))
+
+class Piglet(Animal):
+  sound = "Oink!"
+
+class Cow(Animal):
+  sound = "Moooo"
+
+We defined a parent class, Animal, with two animal types inheriting
+from that class: Piglet and Cow. The parent Animal class has an
+ttribute to store the sound the animal makes, and the constructor
+class takes the name that will be assigned to the instance when it's
+created. There is also the speak method, which will print the name of
+the animal along with the sound it makes.
+
+We defined the Piglet and Cow classes,
+
+which inherit from the Animal class,
+and we set the sound attributes for each animal type
+
+
+###############################################
+
+Now, we can create instances of our Piglet and Cow classes and have them speak:
+
+hamlet = Piglet("Hamlet")
+hamlet.speak()
+
+output: Oink! I'm Hamlet! Oink!
+
+milky = Cow("Milky White")
+milky.speak()
+
+output: Moooo I'm Milky White! Moooo
+
+We create instances of both the Piglet and Cow class, and set the names for our instances.
+Then we call the speak method of each instance, which results in the formatted string being printed;
+it includes the sound the animal type makes, along with the instance name we assigned.
+
+############################################
+###############################################
+###############################################
+############################################
+
+
+OBJECT COMPOSITION
+
+We talked about how inheritance creates an ancestry for
+our objects. To check for this ancestry, we can use the
+is a rule.
+
+An apple is a fruit, a piglet is an animal.
+
+They inherit the attributes and methods of their parent
+class and so they allow us to reduce code duplication,
+but what if you have a relationship between classes,
+where one class isn't a child of the other? Sounds confusing?
+
+Let's check out an example to get a better idea of this.
+
+Say we have a package class that represents a software package
+which could be installed on every machine on our network.
+This class has a lot of information on the software,
+like the name, the version, the size, and more.
+
+We also have a repository class that represents all the packages
+that we have available for installation internally. In this class,
+we want to know how many packages there are and
+what's the total size of all the packages.
+
+In this case, the repository isn't a package
+and the package isn't a repository.
+Instead, the repository contains packages.
+
+To model this within our code, the repository class
+will have an attribute that could be a list or a dictionary,
+
+which will contain instances of the package class.
+So for this scenario, we'll make use of the code in the other classes
+by calling their methods.
+
+
+
+This is what's called composition.
+
+
+############################################
+###############################################
+###############################################
+############################################
+
+
+Let's see this in action. We'll first create a repository
+class that starts with an empty dictionary of packages
+when it's created.
+
+The dictionary will have the names of the packages as keys and the package objects as values.
+
+
+###############################################
+
+class Repository:
+  def __init__(self):
+    self.packages = {}
+  def add_package(self, package):
+    self.packages[package.name] = package
+  def total_size(self):
+    result = 0
+    for package in self.packages.values():
+      result += package.size
+    return result
+
+In the constructor method, we initialize the packages dictionary,
+which will contain the package objects available in this repository
+instance. We initialize the dictionary in the constructor to ensure
+that every instance of the Repository class has its own dictionary.
+
+We then define the add_package method, which takes a Package object
+as a parameter, and then adds it to our dictionary, using the package
+name attribute as the key.
+
+Finally, we define a total_size method which computes the total size of
+all packages contained in our repository. This method iterates through
+the values in our repository dictionary and adds together the size attributes
+from each package object contained in the dictionary, returning the total
+at the end. In this example, we’re making use of Package attributes within
+our Repository class. We’re also calling the values() method on our packages
+dictionary instance. Composition allows us to use objects as attributes,
+as well as access all their attributes and methods.
+
+
+############################################
+###############################################
+###############################################
+############################################
+
+class Clothing:
+  stock={ 'name': [],'material' :[], 'amount':[]}
+  def __init__(self,name):
+    material = ""
+    self.name = name
+  def add_item(self, name, material, amount):
+    Clothing.stock['name'].append(self.name)
+    Clothing.stock['material'].append(self.material)
+    Clothing.stock['amount'].append(amount)
+  def Stock_by_Material(self, material):
+    count=0
+    n=0
+  for item in Clothing.stock['material']:  ## 1 was missing "material"
+    if item == material:
+      count += Clothing.stock['amount'][n] ## 2 was missing ".stock"
+      n+=1
+  return count
+
+
+class shirt(Clothing):
+  material="Cotton"
+
+class pants(Clothing):
+  material="Cotton"
+
+
+polo = shirt("Polo")
+sweatpants = pants("Sweatpants")
+polo.add_item(polo.name, polo.material, 4)
+sweatpants.add_item(sweatpants.name, sweatpants.material, 6)
+current_stock = polo.Stock_by_Material("Cotton")
+print(current_stock)
+
+
+
+############################################
 ###############################################
 ###############################################
 ############################################
