@@ -59,7 +59,7 @@ def calculate_frequencies(file_contents):
                     result[word]=0
                 else:
                     result[word]+=1
-    print(result)
+    ## was printing to screen because i forgot to remove -->print(result)
 
 
 
