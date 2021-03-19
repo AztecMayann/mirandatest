@@ -2040,14 +2040,9 @@ Only letters should be counted, not blank spaces, numbers, or punctuation.
 Upper case should be considered the same as lower case.
 
 For example,
-
 count_letters("This is a sentence.")
-
 should return {'t': 2, 'h': 1, 'i': 2, 's': 3, 'a': 1, 'e': 3, 'n': 2, 'c': 1}.
 
-
-
-###############################################
 
 
 
@@ -2316,6 +2311,23 @@ current_stock = polo.Stock_by_Material("Cotton")
 print(current_stock)
 
 
+
+############################################
+###############################################
+###############################################
+############################################
+
+OOP
+OBJECT ORIENTED PROGRAMMING
+
+
+We've learned that in an object-oriented language like python real-world
+concepts are represented by classes. We know that instances of classes are
+usually called objects. That objects have attributes which are used to
+store information about them and we can make objects do work by calling
+their methods. We've also learned that we can access attributes and methods
+using dot notation. We then dove into objects can be organized by inheritance.
+And how they can be contained inside each other using composition
 
 ############################################
 ###############################################
